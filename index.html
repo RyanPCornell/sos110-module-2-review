@@ -342,6 +342,51 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
   line-height:1.6; color:#2f3f38;}
 .ag-subtext b{font-weight:700; color:var(--forest);}
 
+/* ══════════ 4 · WHAT TO INCLUDE (the rubric) ══════════
+   Same handout register as slide 3: four ruled columns, no cards. The points
+   chip is the only new furniture. */
+.rb-cols{flex:1; min-height:0; display:grid; grid-template-columns:.9fr 1.12fr 1.28fr .78fr;}
+.rb-col{min-width:0; padding:0 clamp(.8rem,1.8vw,1.5rem);}
+.rb-col:first-child{padding-left:0;} .rb-col:last-child{padding-right:0;}
+.rb-col + .rb-col{border-left:1px solid var(--line);}
+.rb-sh{align-items:baseline; min-height:2.4em; margin-bottom:.16rem;}
+.rb-ptswrap{margin-bottom:.4rem;}
+.rb-pts{display:inline-block; font-family:'Inter',sans-serif; font-weight:800;
+  font-size:.6rem; letter-spacing:.04em; color:#fff; background:var(--accent);
+  border-radius:999px; padding:.1rem .48rem; white-space:nowrap;}
+.rb-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.34rem;}
+.rb-list li{position:relative; padding-left:.85rem;
+  font-family:'Merriweather',serif; font-size:clamp(.68rem,1.04vw,.81rem);
+  line-height:1.5; color:#2f3f38;}
+.rb-list li::before{content:""; position:absolute; left:0; top:.62em;
+  width:4px; height:4px; border-radius:50%; background:var(--accent);}
+.rb-list li b{font-weight:700; color:var(--forest);}
+
+/* ══════════ 5 · WORKED EXAMPLE: the feedback loop ══════════ */
+.fl-slide{background:#fbfdfa;}
+.fl-root{gap:0; padding-inline:clamp(3.2rem,5.8vw,5rem); padding-bottom:2.7rem;}
+.fl-h{margin-bottom:.35rem;}
+.fl-body{flex:1; min-height:0; display:grid; grid-template-columns:300px 1fr;
+  gap:clamp(.9rem,2.2vw,1.8rem); align-items:center; margin-top:.3rem;}
+.fl-side{min-width:0; display:flex; flex-direction:column; gap:.7rem;}
+.fl-cap{font-family:'Merriweather',serif; font-size:clamp(.74rem,1.14vw,.88rem);
+  line-height:1.6; color:#2b3a34;}
+.fl-note{font-family:'Merriweather',serif; font-size:clamp(.68rem,1.02vw,.79rem);
+  line-height:1.55; color:#5b6b63; padding-top:.6rem; border-top:1px solid var(--line);}
+/* min-height:0 on both, or the svg's intrinsic viewBox aspect pushes it off the slide */
+.fl-svg{width:100%; height:100%; flex:1 1 0; min-width:0; min-height:0;}
+.fl-t{font:700 17px 'Inter',sans-serif; fill:#1A3C34;}
+.fl-s{font:600 15px 'Inter',sans-serif; fill:#4a6055;}
+.fl-hub{font:900 21px 'Merriweather',serif; fill:#2f7d4f;}
+.fl-plus{font:900 19px 'Inter',sans-serif; fill:#2f7d4f;}
+
+@media(max-width:1080px){
+  .rb-cols{grid-template-columns:1fr 1fr; overflow-y:auto;}
+  .rb-col{border-left:0 !important; border-top:1px solid var(--line); padding:.55rem 0;}
+  .fl-body{grid-template-columns:1fr;}
+  .fl-side{order:2;}
+}
+
 @media(max-width:1080px){
   .ag-cols{grid-template-columns:1fr; overflow-y:auto;}
   .ag-col{padding:.6rem 0; border-left:0 !important; border-top:1px solid var(--line);}
@@ -728,7 +773,7 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
       <h2 class="heading">Upcoming Assignments</h2>
       <p class="an-sub">Here's what's on deck. Check Canvas for full instructions and submission links.</p>
     </div>
-    <div class="an-list"><div class="an-row"><span class="an-num">1</span><div class="an-main"><div class="an-name">Module 2 Review — group mind map</div><div class="an-detail">Built in class today. Every student submits their own copy on Canvas — the full brief is on the next slide.</div></div></div></div>
+    <div class="an-list"><div class="an-row"><span class="an-num">1</span><div class="an-main"><div class="an-name">Discussion: What Would You Do? Exercise 1</div></div></div></div>
     
     <div class="an-att" data-at-bar hidden><button class="an-att-btn" type="button" data-at-open>Attendance</button><select class="an-att-sel" data-at-section aria-label="Class section"><option value="MWF0905">MWF 9:05 am</option><option value="MWF1220">MWF 12:20 pm</option><option value="TTH1200">TTh 12:00 pm</option></select><button class="an-att-btn go" type="button" data-at-finalize hidden>Submit Attendance</button><button class="an-att-cancel" type="button" data-at-cancel hidden>Cancel</button><button class="an-att-cancel" type="button" data-at-clear hidden>Clear last roll call</button><span class="an-att-status" data-at-status></span></div>
   </div>
@@ -790,6 +835,46 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
         deadline. Your submission must include <b>Metadata</b> &mdash; the title of your work and your name; <b>Format</b> &mdash; a PDF or high-resolution image; <b>The Diagram</b> &mdash; your mapped system diagram; <b>Explanation</b> &mdash; the collaborative paragraph.</p>
     </div>
 
+  </div>
+  <div class="footer"></div>
+</section>
+<section class="slide ag-slide" data-type="rubric" style="--accent:#B5651D">
+  <div class="slide-inner col ag-root">
+
+    <div class="eyebrow">SOS 110 &nbsp;·&nbsp; Module 2 &nbsp;·&nbsp; Review</div>
+    <h2 class="heading ag-h">Review Exercise 1: What to Include</h2>
+    <p class="ag-obj">Follow each task closely and make every required element easy to identify.</p>
+
+    <div class="ag-rule"><span>Scored out of 100</span></div>
+
+    <div class="rb-cols"><div class="ag-col rb-col"><h3 class="ag-sh rb-sh"><span class="ag-n">1.</span>Native Biodiversity List</h3><div class="rb-ptswrap"><b class="rb-pts">10 pts</b></div><ul class="rb-list"><li>Identify 3+ representative plant communities.</li><li>Identify 3+ representative animal species.</li></ul></div><div class="ag-col rb-col"><h3 class="ag-sh rb-sh"><span class="ag-n">2.</span>Ecosystem Services Mapping</h3><div class="rb-ptswrap"><b class="rb-pts">40 pts</b></div><ul class="rb-list"><li>Show provisioning, regulating, supporting, and cultural services in a visual grid.</li><li>Explain each service with an example in the feedback loop.</li><li>Connect each service to a sustainability outcome.</li></ul></div><div class="ag-col rb-col"><h3 class="ag-sh rb-sh"><span class="ag-n">3.</span>Sustainability Impact Analysis</h3><div class="rb-ptswrap"><b class="rb-pts">40 pts</b></div><ul class="rb-list"><li>Write no more than 4&ndash;6 sentences.</li><li>Identify one major threat to Grand Canyon National Park.</li><li>Identify one Task 2 ecosystem service that the threat affects.</li><li>Explain the impact of human activity on the challenge.</li><li>Propose at least one solution to mitigate the threat.</li></ul></div><div class="ag-col rb-col"><h3 class="ag-sh rb-sh"><span class="ag-n">4.</span>References</h3><div class="rb-ptswrap"><b class="rb-pts">10 pts</b></div><ul class="rb-list"><li>Use only official sources: <b>USGS.gov</b> and <b>NPS.gov</b>.</li></ul></div></div>
+
+    <div class="ag-sub">
+      <div class="ag-sublbl">Remember</div>
+      <p class="ag-subtext">Every student submits their own copy on Canvas. Export the mind map
+        as a PDF or a high-resolution image, and put <b>your name and the title of your work</b>
+        on it.</p>
+    </div>
+
+  </div>
+  <div class="footer"></div>
+</section>
+<section class="slide fl-slide" data-type="loopex" style="--accent:#2f7d4f">
+  <div class="slide-inner col fl-root">
+    <div class="eyebrow">SOS 110 &nbsp;·&nbsp; Module 2 &nbsp;·&nbsp; Worked Example</div>
+    <h2 class="heading fl-h">Cultural Ecosystem Services Feedback Loop: City Park</h2>
+    <div class="fl-body">
+      <div class="fl-side">
+        <p class="fl-cap">This reinforcing feedback loop shows how trees and vegetation in a
+          Phoenix park enhance cultural ecosystem services, increasing community use and support
+          and encouraging greater stewardship and investment in the park.</p>
+        <p class="fl-note">Task 2 asks you to connect each service to a sustainability outcome.
+          When that outcome feeds back and strengthens whatever produced it, you have a loop.
+          Every arrow here is positive, which is what makes it reinforcing rather than
+          balancing.</p>
+      </div>
+      <svg viewBox="0 0 1000 620" class="fl-svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><defs><filter id="flRough" x="-6%" y="-6%" width="112%" height="112%"><feTurbulence type="fractalNoise" baseFrequency="0.019" numOctaves="3" seed="12" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.1" xChannelSelector="R" yChannelSelector="G"/></filter></defs><path d="M658 104 Q794 108 790 232" fill="none" stroke="#2f7d4f" stroke-width="4" stroke-linecap="round" filter="url(#flRough)"/><path d="M784 216 L790 232 L797 217 Z" fill="#2f7d4f"/><circle cx="759" cy="138" r="15" fill="#fff" stroke="#2f7d4f" stroke-width="2.4"/><text x="759" y="144" text-anchor="middle" class="fl-plus">+</text><path d="M800 392 Q800 516 664 516" fill="none" stroke="#2f7d4f" stroke-width="4" stroke-linecap="round" filter="url(#flRough)"/><path d="M680 509 L664 516 L680 523 Z" fill="#2f7d4f"/><circle cx="766" cy="485" r="15" fill="#fff" stroke="#2f7d4f" stroke-width="2.4"/><text x="766" y="491" text-anchor="middle" class="fl-plus">+</text><path d="M336 516 Q202 516 202 368" fill="none" stroke="#2f7d4f" stroke-width="4" stroke-linecap="round" filter="url(#flRough)"/><path d="M209 384 L202 368 L195 384 Z" fill="#2f7d4f"/><circle cx="236" cy="479" r="15" fill="#fff" stroke="#2f7d4f" stroke-width="2.4"/><text x="236" y="485" text-anchor="middle" class="fl-plus">+</text><path d="M190 250 Q190 104 326 104" fill="none" stroke="#2f7d4f" stroke-width="4" stroke-linecap="round" filter="url(#flRough)"/><path d="M310 111 L326 104 L310 97 Z" fill="#2f7d4f"/><circle cx="224" cy="140" r="15" fill="#fff" stroke="#2f7d4f" stroke-width="2.4"/><text x="224" y="146" text-anchor="middle" class="fl-plus">+</text><ellipse cx="500" cy="310" rx="128" ry="80" fill="#DCEBDC" stroke="#2f7d4f" stroke-width="3.4" filter="url(#flRough)"/><text x="500" y="302" text-anchor="middle" class="fl-hub">Reinforcing</text><text x="500" y="334" text-anchor="middle" class="fl-hub">feedback loop</text><rect x="335" y="43" width="330" height="86" rx="16" fill="#ECF4EC" stroke="#2f7d4f" stroke-width="3" filter="url(#flRough)"/><text x="500" y="80" text-anchor="middle" class="fl-t">Trees, vegetation and</text><text x="500" y="106" text-anchor="middle" class="fl-t">attractive park space</text><rect x="676" y="235" width="304" height="150" rx="16" fill="#ECF4EC" stroke="#2f7d4f" stroke-width="3" filter="url(#flRough)"/><text x="828" y="271" text-anchor="middle" class="fl-t">Cultural ecosystem services</text><text x="828" y="301" text-anchor="middle" class="fl-s">Recreation</text><text x="828" y="324" text-anchor="middle" class="fl-s">Aesthetics</text><text x="828" y="347" text-anchor="middle" class="fl-s">Social interaction</text><text x="828" y="370" text-anchor="middle" class="fl-s">Sense of place</text><rect x="328" y="491" width="344" height="86" rx="16" fill="#ECF4EC" stroke="#2f7d4f" stroke-width="3" filter="url(#flRough)"/><text x="500" y="528" text-anchor="middle" class="fl-t">Public appreciation and</text><text x="500" y="554" text-anchor="middle" class="fl-t">support for the park</text><rect x="20" y="260" width="304" height="100" rx="16" fill="#ECF4EC" stroke="#2f7d4f" stroke-width="3" filter="url(#flRough)"/><text x="172" y="304" text-anchor="middle" class="fl-t">Investment, maintenance</text><text x="172" y="330" text-anchor="middle" class="fl-t">and stewardship</text></svg>
+    </div>
   </div>
   <div class="footer"></div>
 </section>
@@ -2005,7 +2090,7 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
 
 <div class="hud">
   <button onclick="prev()" title="Previous (left arrow)">&#8249;</button>
-  <span class="counter" id="counter">1 / 4</span>
+  <span class="counter" id="counter">1 / 6</span>
   <button onclick="next()" title="Next (right arrow)">&#8250;</button>
   <button onclick="toggleMenu()" title="Slide menu (O)">&#9776;</button>
   <button onclick="toggleFs()" title="Fullscreen (F)">&#9974;</button>
@@ -2014,7 +2099,7 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
 <div class="menu" id="menu">
   <button class="menu-close" onclick="toggleMenu(false)" aria-label="Close menu">&times;</button>
   <h3>Module 2 Review &mdash; Jump to a slide</h3>
-  <div class="menu-grid"><button class="menu-item" data-go="0"><span class="menu-num">1</span>Title</button><button class="menu-item" data-go="1"><span class="menu-num">2</span>Announcements</button><button class="menu-item" data-go="2"><span class="menu-num">3</span>The Assignment</button><button class="menu-item" data-go="3"><span class="menu-num">4</span>★ Module 2 SET Builder</button></div>
+  <div class="menu-grid"><button class="menu-item" data-go="0"><span class="menu-num">1</span>Title</button><button class="menu-item" data-go="1"><span class="menu-num">2</span>Announcements</button><button class="menu-item" data-go="2"><span class="menu-num">3</span>The Assignment</button><button class="menu-item" data-go="3"><span class="menu-num">4</span>What to Include</button><button class="menu-item" data-go="4"><span class="menu-num">5</span>Feedback Loop Example</button><button class="menu-item" data-go="5"><span class="menu-num">6</span>★ Module 2 SET Builder</button></div>
 </div>
 
 <script>
