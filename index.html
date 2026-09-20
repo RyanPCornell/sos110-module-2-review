@@ -509,9 +509,8 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
 .bd-mixrow span:not(.bd-dot){min-width:5.2em;}
 .bd-mb{flex:1; height:7px; background:#eef2ef; border-radius:4px; overflow:hidden;}
 .bd-mb b{display:block; height:100%; width:0; border-radius:4px; transition:width .35s;}
-.bd-mixrow:nth-child(1) .bd-mb b{background:#c9722b;}
-.bd-mixrow:nth-child(2) .bd-mb b{background:#2f7d4f;}
-.bd-mixrow:nth-child(3) .bd-mb b{background:#1C7293;}
+.bd-mixrow:nth-child(1) .bd-mb b{background:#1C7293;}
+.bd-mixrow:nth-child(2) .bd-mb b{background:#A4373A;}
 .bd-checks{display:flex; flex-direction:column; gap:.14rem;}
 .bd-check{display:flex; align-items:flex-start; gap:.35rem; font-size:.72rem; font-weight:600; color:#96a49d; line-height:1.3;}
 .bd-check span{font-weight:900; color:#c5d0ca;}
@@ -582,6 +581,18 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
 .bd-fin:focus{outline:none; border-color:var(--forest-mid); background:#fff;}
 .bd-fkind{width:auto; flex:none; font-weight:800; color:var(--forest); cursor:pointer;}
 .bd-fta{resize:vertical;}
+.bd-t2-card{max-width:min(940px,94vw);}
+.bd-t2grid{display:grid; grid-template-columns:7.2em 1fr 1.3fr; gap:.35rem .55rem; align-items:start;}
+.bd-t2h{font-size:.6rem; font-weight:800; letter-spacing:.07em; text-transform:uppercase;
+  color:#6b7d75; border-bottom:1px solid var(--line); padding-bottom:.3rem;}
+.bd-t2c{font-size:.75rem; font-weight:800; color:var(--forest); padding-top:.5rem; line-height:1.3;}
+.bd-t2grid .bd-fin{width:100%;}
+.bd-t2grid > div:not(.bd-t2h){padding-top:.35rem;}
+@media(max-width:820px){
+  .bd-t2grid{grid-template-columns:1fr; gap:.2rem;}
+  .bd-t2h{display:none;}
+  .bd-t2c{border-top:1px solid var(--line); margin-top:.35rem; padding-top:.45rem;}
+}
 .bd-fta.short{min-height:3.1rem;}
 .bd-modal-ta{min-height:min(19vh,8.5rem);}
 .bd-cb{display:flex; align-items:center; gap:.4rem; font-size:.76rem; color:#5b6b63; cursor:pointer;}
@@ -786,11 +797,11 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
     <h2 class="heading ag-h">Ecosystem Services of Grand Canyon National Park</h2>
 
     <div class="ag-meta">
-      <div><dt>Duration</dt><dd>30&ndash;45 minutes</dd></div>
+      <div><dt>Duration</dt><dd>50 minutes</dd></div>
       <div><dt>Group size</dt><dd>Varies &mdash; work with the students sitting around you.</dd></div>
       <div><dt>Tools</dt><dd>Zoom Whiteboard, InsightMaker, Canva, Miro, Google Slides, or the
-        dedicated <b>Module 2 SET Builder</b> &mdash;
-        <span class="ag-url">ryanpcornell.github.io/sos110-module-2-set-builder</span></dd></div>
+        dedicated <b>Module 2 Systems Builder</b>, on the last slide of this deck:
+        <span class="ag-url">ryanpcornell.github.io/sos110-module-2-review/#slide-6</span></dd></div>
     </div>
 
     <p class="ag-obj"><b>Objective.</b> Collaboratively analyze the ecosystem services of Grand
@@ -907,7 +918,9 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
         </select>
         <button class="bd-info" type="button" data-infobtn title="How this tool works">&#9432; Info</button>
         <button class="bd-btn ghost" type="button" data-clear>Clear</button>
-        <button class="bd-btn expl" type="button" data-explbtn title="Task 3 — the challenge, the link, the human factor and the solution">✎ Task 3 write-up</button>
+        <button class="bd-btn expl" type="button" data-t1btn title="Task 1 write-up: the plant communities and the native animals you found">✎ Task 1</button>
+        <button class="bd-btn expl" type="button" data-t2btn title="Task 2 write-up: the ecosystem services table the sheet asks for">✎ Task 2</button>
+        <button class="bd-btn expl" type="button" data-explbtn title="Task 3 write-up: the challenge, the link, the human factor and the solution">✎ Task 3</button>
         <button class="bd-btn pdf" type="button" data-pdf title="Opens your browser's print dialog — choose “Save as PDF”">⤓ Save as PDF</button>
       </div>
     </div>
@@ -957,8 +970,6 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
       <!-- ── analysis ── -->
       <div class="bd-panel">
         <div class="bd-mix">
-          <div class="bd-mixrow"><span class="bd-dot p"></span>Plants<i data-c="plant">0</i><div class="bd-mb"><b data-mb="plant"></b></div></div>
-          <div class="bd-mixrow"><span class="bd-dot a"></span>Animals<i data-c="animal">0</i><div class="bd-mb"><b data-mb="animal"></b></div></div>
           <div class="bd-mixrow"><span class="bd-dot v"></span>Services<i data-c="serv">0</i><div class="bd-mb"><b data-mb="serv"></b></div></div>
           <div class="bd-mixrow"><span class="bd-dot h"></span>Pressures<i data-c="press">0</i><div class="bd-mb"><b data-mb="press"></b></div></div>
         </div>
@@ -973,6 +984,95 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
       </div>
     </div>
 
+    <!-- ── Task 1: the two lists the sheet asks for, typed rather than counted
+         off the canvas, so a student can finish Task 1 without drawing anything -->
+    <div class="bd-modal" data-t1modal hidden>
+      <div class="bd-modal-card" role="dialog" aria-modal="true" aria-label="Task 1 biodiversity write-up">
+        <div class="bd-modal-head">
+          <h3>Task 1 &middot; Biodiversity of the Park</h3>
+          <button class="bd-modal-x" type="button" data-t1-close aria-label="Close">&times;</button>
+        </div>
+        <p class="bd-modal-hint">One per line. The sheet asks for at least three plant communities
+          and at least three native animal species, named only from <b>nps.gov</b> or <b>usgs.gov</b>.
+          They print as two lists at the top of your PDF.</p>
+        <div class="bd-modal-body">
+          <div class="bd-fsec">
+            <div class="bd-flabel">1 &middot; Plant communities: <em>three or more, one per line</em></div>
+            <textarea class="bd-fin bd-fta" data-t1plants spellcheck="true" rows="4"
+              placeholder="Pinyon-juniper woodland&#10;Riparian cottonwood and willow&#10;Blackbrush scrub"></textarea>
+            <div class="bd-fnote" data-t1pnote></div>
+          </div>
+          <div class="bd-fsec">
+            <div class="bd-flabel">2 &middot; Native animal species: <em>three or more, one per line</em></div>
+            <textarea class="bd-fin bd-fta" data-t1animals spellcheck="true" rows="4"
+              placeholder="California condor&#10;Desert bighorn sheep&#10;Humpback chub"></textarea>
+            <div class="bd-fnote" data-t1anote></div>
+          </div>
+          <div class="bd-fsec">
+            <div class="bd-flabel">3 &middot; Official sources</div>
+            <div class="bd-fnote">Record the pages in the band above the diagram, where they stay
+              visible while you work. They print beside your name.</div>
+          </div>
+        </div>
+        <div class="bd-modal-foot">
+          <span class="bd-modal-note">Both lists print on your PDF.</span>
+          <button class="bd-btn" type="button" data-t1-fill title="Copy the plant and animal pieces already on your diagram into these lists">↺ From diagram</button>
+          <button class="bd-btn" type="button" data-t1-clear>Clear</button>
+          <button class="bd-btn pdf" type="button" data-t1-close>Done</button>
+        </div>
+      </div>
+    </div>
+    <!-- ── Task 2: the sheet's own three-column table. It used to be assembled
+         only from service pieces plus their ➜ provides arrows, which meant Task 2
+         could not be finished without drawing. Typing it here is now the source of
+         truth; the diagram fills empty rows in rather than gating them. -->
+    <div class="bd-modal" data-t2modal hidden>
+      <div class="bd-modal-card bd-t2-card" role="dialog" aria-modal="true" aria-label="Task 2 ecosystem services table">
+        <div class="bd-modal-head">
+          <h3>Task 2 &middot; Ecosystem Services Analysis</h3>
+          <button class="bd-modal-x" type="button" data-t2-close aria-label="Close">&times;</button>
+        </div>
+        <p class="bd-modal-hint">One example from each of the four categories, and for each one the
+          sustainability relationship or feedback loop it sits in. This table is what prints on your PDF.</p>
+        <div class="bd-modal-body">
+          <div class="bd-t2grid">
+            <div class="bd-t2h">Service type</div>
+            <div class="bd-t2h">GCNP example</div>
+            <div class="bd-t2h">Sustainability relationship or feedback loop</div>
+
+            <div class="bd-t2c">Provisioning</div>
+            <div><input class="bd-fin" data-t2ex="prov" type="text" maxlength="120" spellcheck="true"
+              aria-label="Provisioning service example" placeholder="e.g. Colorado River water supply"></div>
+            <div><textarea class="bd-fin bd-fta short" data-t2rel="prov" rows="2" spellcheck="true"
+              aria-label="Provisioning sustainability relationship" placeholder="Who or what depends on it, and what happens to the park if it declines?"></textarea></div>
+
+            <div class="bd-t2c">Regulating</div>
+            <div><input class="bd-fin" data-t2ex="reg" type="text" maxlength="120" spellcheck="true"
+              aria-label="Regulating service example" placeholder="e.g. canyon walls buffering flash floods"></div>
+            <div><textarea class="bd-fin bd-fta short" data-t2rel="reg" rows="2" spellcheck="true"
+              aria-label="Regulating sustainability relationship" placeholder="Name the loop: what does this stabilise, and what does that stability protect?"></textarea></div>
+
+            <div class="bd-t2c">Supporting</div>
+            <div><input class="bd-fin" data-t2ex="sup" type="text" maxlength="120" spellcheck="true"
+              aria-label="Supporting service example" placeholder="e.g. soil formation on the Tonto Platform"></div>
+            <div><textarea class="bd-fin bd-fta short" data-t2rel="sup" rows="2" spellcheck="true"
+              aria-label="Supporting sustainability relationship" placeholder="Which of the other services would fail without it?"></textarea></div>
+
+            <div class="bd-t2c">Cultural</div>
+            <div><input class="bd-fin" data-t2ex="cult" type="text" maxlength="120" spellcheck="true"
+              aria-label="Cultural service example" placeholder="e.g. ancestral Havasupai sites"></div>
+            <div><textarea class="bd-fin bd-fta short" data-t2rel="cult" rows="2" spellcheck="true"
+              aria-label="Cultural sustainability relationship" placeholder="How does valuing this feed back into protecting the ecosystem?"></textarea></div>
+          </div>
+        </div>
+        <div class="bd-modal-foot">
+          <span class="bd-modal-note">Empty rows fill themselves from your diagram when you open this.</span>
+          <button class="bd-btn" type="button" data-t2-fill title="Overwrite these rows with the services and outcomes on your diagram">↺ From diagram</button>
+          <button class="bd-btn" type="button" data-t2-clear>Clear</button>
+          <button class="bd-btn pdf" type="button" data-t2-close>Done</button>
+        </div>
+      </div>
+    </div>
     <!-- ── explanation ── -->
     <div class="bd-modal" data-modal hidden>
       <div class="bd-modal-card" role="dialog" aria-modal="true" aria-label="Task 3 impact analysis">
@@ -985,24 +1085,24 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
           asks you to hand in.</p>
         <div class="bd-modal-body">
           <div class="bd-fsec">
-            <div class="bd-flabel">1 &middot; The challenge <em>&mdash; one major threat to the park</em></div>
+            <div class="bd-flabel">1 &middot; The challenge: <em>one major threat to the park</em></div>
             <input class="bd-fin" data-t3chal type="text" maxlength="130" spellcheck="true"
               placeholder="e.g. a two-decade drought across the Colorado Plateau" aria-label="The challenge">
           </div>
           <div class="bd-fsec">
-            <div class="bd-flabel">2 &middot; The link <em>&mdash; which service from Task 2 it harms most</em></div>
+            <div class="bd-flabel">2 &middot; The link: <em>which service from Task 2 it harms most</em></div>
             <select class="bd-fin" data-t3link aria-label="The ecosystem service most harmed">
-              <option value="">Put some services on the diagram first&hellip;</option>
+              <option value="">Fill in the Task 2 table first&hellip;</option>
             </select>
             <div class="bd-fnote" data-t3linknote></div>
           </div>
           <div class="bd-fsec">
-            <div class="bd-flabel">3 &middot; The human factor <em>&mdash; what drives or accelerates it</em></div>
+            <div class="bd-flabel">3 &middot; The human factor: <em>what drives or accelerates it</em></div>
             <textarea class="bd-fin bd-fta short" data-t3human spellcheck="true" rows="3"
-              placeholder="Upstream dam management, over-tourism, groundwater pumping for development — say how the human activity accelerates the threat."></textarea>
+              placeholder="Upstream dam management, over-tourism, groundwater pumping for development. Say how the human activity accelerates the threat."></textarea>
           </div>
           <div class="bd-fsec">
-            <div class="bd-flabel">4 &middot; The solution <em>&mdash; one viable strategy</em></div>
+            <div class="bd-flabel">4 &middot; The solution: <em>one viable strategy</em></div>
             <textarea class="bd-fin bd-fta short" data-t3sol spellcheck="true" rows="3"
               placeholder="Who would have to act, and which arrow on your diagram would it change?"></textarea>
           </div>
@@ -1049,8 +1149,8 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
                     the habitat other species depend on. <i>Task 1 into Task 2.</i></td></tr>
             <tr><th><b class="eng">&rarr;</b>&ensp;provides</th>
                 <td>A service delivers a concrete sustainability outcome. This is the arrow
-                    Task 2 explicitly asks for, and the checklist wants one on
-                    <i>every</i> service you place.</td></tr>
+                    Task 2 asks for, and it writes the third column of the Task 2 table
+                    for you.</td></tr>
             <tr><th><b class="neg">&minus;</b>&ensp;harms</th>
                 <td>A human pressure degrades a service. This is Task 3&rsquo;s
                     <i>link</i>, drawn rather than just asserted.</td></tr>
@@ -1068,12 +1168,20 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
             where you record the pages your plant and animal names came from, and it prints on
             the PDF next to your name.</p>
 
+          <div class="bd-i-rule"><span>Where each task gets written down</span></div>
+          <p class="bd-i-p">The diagram is only half of what you hand in. The written half has a
+            button of its own along the top for each task. <span class="bd-ui">Task 1</span> takes
+            your two lists of plant communities and native animals.
+            <span class="bd-ui">Task 2</span> is the sheet&rsquo;s own three-column table, one row
+            per service category. <span class="bd-ui">Task 3</span> assembles the four-part
+            paragraph. Whatever you have already drawn fills the empty rows in for you, so the
+            picture and the write-up stay in step.</p>
+
           <div class="bd-i-rule"><span>Finishing</span></div>
           <p class="bd-i-p">The panel on the right tracks all three tasks as you work, and names
-            any feedback loop it finds &mdash; which is what Task 2&rsquo;s third column is asking
-            for. When the checklist is full, open <span class="bd-ui">Task 3 write-up</span> for
-            the four-part paragraph, then <span class="bd-ui">Save as PDF</span>. Every student
-            submits their own copy.</p>
+            any feedback loop it finds, which is what Task 2&rsquo;s third column is asking for.
+            When the checklist is full, choose <span class="bd-ui">Save as PDF</span>. Every
+            student submits their own copy.</p>
           <p class="bd-i-p bd-i-muted">The two worked examples are the ones the sheet names as
             already used, precisely so you cannot hand them in. Load one to see the shape of a
             finished answer &mdash; four categories, every service pointing at an outcome, one
@@ -1447,6 +1555,35 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
       if(e.key==='Escape') closeExpl();
     });
 
+    /* ── Task 1 and Task 2 write-ups ──
+       Same shape as Task 3's modal. Both open pre-filled from whatever is already
+       drawn, which is how a student who built the diagram first avoids retyping,
+       and how a student who has drawn nothing yet can still finish the task. */
+    var t1modal=wrap.querySelector('[data-t1modal]'), t2modal=wrap.querySelector('[data-t2modal]');
+    function openT1(){ fillT1(false); t1modal.hidden=false; setTimeout(function(){ if(t1plants) t1plants.focus(); },40); }
+    function openT2(){ fillT2(false); t2modal.hidden=false; setTimeout(function(){ if(t2ex.prov) t2ex.prov.focus(); },40); }
+    function wireModal(m, openers, closers){
+      openers.forEach(function(sel){
+        var b=wrap.querySelector(sel); if(b) b.addEventListener('click',closers.open); });
+      wrap.querySelectorAll(closers.close).forEach(function(b){
+        b.addEventListener('click',function(){ m.hidden=true; }); });
+      m.addEventListener('pointerdown',function(e){ if(e.target===m) m.hidden=true; });
+      m.addEventListener('keydown',function(e){
+        e.stopPropagation(); if(e.key==='Escape') m.hidden=true; });
+    }
+    wireModal(t1modal, ['[data-t1btn]'], {open:openT1, close:'[data-t1-close]'});
+    wireModal(t2modal, ['[data-t2btn]'], {open:openT2, close:'[data-t2-close]'});
+    wrap.querySelector('[data-t1-fill]').addEventListener('click',function(){ fillT1(true); });
+    wrap.querySelector('[data-t2-fill]').addEventListener('click',function(){ fillT2(true); });
+    wrap.querySelector('[data-t1-clear]').addEventListener('click',function(){
+      [t1plants,t1animals].forEach(function(e){ if(e) e.value=''; });
+      if(t1plants) t1plants.focus(); analyse();
+    });
+    wrap.querySelector('[data-t2-clear]').addEventListener('click',function(){
+      SERVICE.forEach(function(c){ t2ex[c].value=''; t2rel[c].value=''; });
+      if(t2ex.prov) t2ex.prov.focus(); analyse();
+    });
+
     /* ── info ── */
     var infoModal=wrap.querySelector('[data-infomodal]');
     function closeInfo(){ infoModal.hidden=true; }
@@ -1595,10 +1732,45 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
 
     /* ── assignment fields ── */
     var srcEl=wrap.querySelector('[data-sources]'),
+        t1plants=wrap.querySelector('[data-t1plants]'), t1animals=wrap.querySelector('[data-t1animals]'),
         t3chal=wrap.querySelector('[data-t3chal]'),  t3link=wrap.querySelector('[data-t3link]'),
         t3human=wrap.querySelector('[data-t3human]'),t3sol=wrap.querySelector('[data-t3sol]'),
         nameEl=wrap.querySelector('[data-name]'),    whoEl=wrap.querySelector('[data-author]');
     function fv(e){ return e ? (e.value||'').trim() : ''; }
+    var t2ex={}, t2rel={};
+    SERVICE.forEach(function(c){
+      t2ex[c] =wrap.querySelector('[data-t2ex="'+c+'"]');
+      t2rel[c]=wrap.querySelector('[data-t2rel="'+c+'"]');
+    });
+    /* one item per line, tolerating the bullets and numbers students paste in */
+    function lines(e){
+      return fv(e).split(/\n+/)
+        .map(function(t){ return t.replace(/^\s*(?:[-•*·]|\d+[.)])\s*/,'').trim(); })
+        .filter(function(t){ return t.length; });
+    }
+    /* the Task 2 table, as four rows, whatever its origin */
+    function t2Rows(){ return SERVICE.map(function(c){
+      return {c:c, ex:fv(t2ex[c]), rel:fv(t2rel[c])}; }); }
+    function fillT1(force){
+      var p=nodes.filter(function(x){ return x.dom==='plant'; }).map(function(x){ return x.label; });
+      var a=nodes.filter(function(x){ return x.dom==='animal'; }).map(function(x){ return x.label; });
+      if(p.length && (force||!fv(t1plants)))  t1plants.value =p.join('\n');
+      if(a.length && (force||!fv(t1animals))) t1animals.value=a.join('\n');
+      analyse();
+    }
+    function fillT2(force){
+      SERVICE.forEach(function(c){
+        var list=nodes.filter(function(x){ return x.dom===c; });
+        if(!list.length) return;
+        if(force||!fv(t2ex[c])) t2ex[c].value=list.map(function(x){ return x.label; }).join('; ');
+        var outs=[];
+        list.forEach(function(x){ servedBy(x).forEach(function(o){
+          if(outs.indexOf(o.label)<0) outs.push(o.label); }); });
+        if(outs.length && (force||!fv(t2rel[c])))
+          t2rel[c].value='Leads to: '+outs.join('; ');
+      });
+      analyse();
+    }
 
     /* module1_set_builder has no general escaper (only pesc, inside the PDF
        section), and syncLinkOpts writes labels into <option> text. */
@@ -1623,12 +1795,12 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
     /* the Link dropdown only ever offers services actually on the diagram */
     function syncLinkOpts(){
       if(!t3link) return;
-      var cur=t3link.value, opts=servicesOn();
+      var cur=t3link.value, opts=t2Rows().filter(function(r){ return r.ex; });
       t3link.innerHTML = opts.length
         ? '<option value="">Choose the service most harmed…</option>' +
-          opts.map(function(n){ return '<option value="'+n.id+'">'+esc(SERVNAME[n.dom])+' · '+esc(n.label)+'</option>'; }).join('')
-        : '<option value="">Put some services on the diagram first…</option>';
-      if(cur && opts.some(function(n){ return String(n.id)===String(cur); })) t3link.value=cur;
+          opts.map(function(r){ return '<option value="'+r.c+'">'+esc(SERVNAME[r.c])+' · '+esc(r.ex)+'</option>'; }).join('')
+        : '<option value="">Fill in the Task 2 table first…</option>';
+      if(cur && opts.some(function(r){ return r.c===cur; })) t3link.value=cur;
       var note=wrap.querySelector('[data-t3linknote]');
       if(note) note.textContent = opts.length
         ? 'Drawing a − harms arrow from a pressure to that service makes the link visible on the diagram too.'
@@ -1636,26 +1808,36 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
     }
     function linkedService(){
       if(!t3link||!t3link.value) return null;
-      return nodes.filter(function(n){ return String(n.id)===String(t3link.value); })[0]||null;
+      var r=t2Rows().filter(function(x){ return x.c===t3link.value && x.ex; })[0];
+      return r ? {dom:r.c, label:r.ex} : null;
     }
 
     function clearWriteup(){
-      [t3chal,t3human,t3sol].forEach(function(e){ if(e) e.value=''; });
+      [t1plants,t1animals,t3chal,t3human,t3sol].forEach(function(e){ if(e) e.value=''; });
+      SERVICE.forEach(function(c){ if(t2ex[c]) t2ex[c].value=''; if(t2rel[c]) t2rel[c].value=''; });
       if(t3link) t3link.value='';
     }
     function analyse(){
       var cnt={plant:0,animal:0,prov:0,reg:0,sup:0,cult:0,press:0,out:0};
       nodes.forEach(function(n){ if(cnt[n.dom]!==undefined) cnt[n.dom]++; });
       cnt.serv=cnt.prov+cnt.reg+cnt.sup+cnt.cult;
-      var tot=Math.max(1,cnt.plant+cnt.animal+cnt.serv+cnt.press);
-      ['plant','animal','serv','press'].forEach(function(k){
+      var tot=Math.max(1,cnt.serv+cnt.press);
+      ['serv','press'].forEach(function(k){
         wrap.querySelector('[data-c="'+k+'"]').textContent=cnt[k];
         wrap.querySelector('[data-mb="'+k+'"]').style.width=(cnt[k]/tot*100)+'%';
       });
       syncLinkOpts();
+      var plantL=lines(t1plants), animalL=lines(t1animals);
+      var rows2=t2Rows(), filled2=rows2.filter(function(r){ return r.ex; }),
+          rel2=filled2.filter(function(r){ return r.rel; });
       var tally=wrap.querySelector('[data-tally]');
-      if(tally) tally.innerHTML='<b>'+cnt.plant+'</b> plants &middot; <b>'+cnt.animal+
-        '</b> animals &middot; <b>'+cnt.serv+'</b> services';
+      if(tally) tally.innerHTML='<b>'+plantL.length+'</b> plants &middot; <b>'+animalL.length+
+        '</b> animals &middot; <b>'+filled2.length+'</b>/4 services';
+      var pn=wrap.querySelector('[data-t1pnote]'), an=wrap.querySelector('[data-t1anote]');
+      function tnote(k,word){ return k>=3 ? k+' listed. That meets the minimum.'
+        : k+' '+word+' so far. The sheet asks for three or more.'; }
+      if(pn) pn.textContent=tnote(plantL.length, plantL.length===1?'community':'communities');
+      if(an) an.textContent=tnote(animalL.length, animalL.length===1?'species':'species');
 
       var cross=links.filter(function(l){ return l.a.dom!==l.b.dom; }).length;
       loopsCache=findLoops();
@@ -1664,13 +1846,14 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
       var missing=SERVICE.filter(function(c){ return cats.indexOf(c)<0; }).map(function(c){ return SERVNAME[c]; });
 
       var t1=[
-        {ok:cnt.plant>=3,  t:'Three or more plant communities ('+cnt.plant+')'},
-        {ok:cnt.animal>=3, t:'Three or more native animals ('+cnt.animal+')'},
-        {ok:!!fv(srcEl),   t:'Official sources recorded'}
+        {ok:plantL.length>=3,  t:'Three or more plant communities ('+plantL.length+')'},
+        {ok:animalL.length>=3, t:'Three or more native animals ('+animalL.length+')'},
+        {ok:!!fv(srcEl),       t:'Official sources recorded'}
       ];
       var t2=[
-        {ok:cats.length===4, t:'All four service categories ('+cats.length+'/4)'},
-        {ok:servN>0&&linkedN===servN, t:'Every service points to an outcome ('+linkedN+'/'+servN+')'}
+        {ok:filled2.length===4, t:'An example in all four categories ('+filled2.length+'/4)'},
+        {ok:filled2.length>0&&rel2.length===filled2.length,
+         t:'Each one given a sustainability relationship ('+rel2.length+'/'+filled2.length+')'}
       ];
       var t3=[
         {ok:!!fv(t3chal),        t:'A threat to the park is named'},
@@ -1701,28 +1884,36 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
           }).join('') + (loopsCache.length>3?'<div class="bd-loopmore">+'+(loopsCache.length-3)+' more</div>':'');
       }
 
+      var missing2=rows2.filter(function(r){ return !r.ex; }).map(function(r){ return SERVNAME[r.c]; });
       var v;
-      if(!nodes.length) v='Start with <b>Task 1</b>. Drop in a plant or an animal you can source from nps.gov or usgs.gov.';
-      else if(cnt.plant<3||cnt.animal<3) v='Task 1 wants <b>three or more</b> of each. You have '+cnt.plant+
-        ' plant'+(cnt.plant===1?'':'s')+' and '+cnt.animal+' animal'+(cnt.animal===1?'':'s')+'.';
-      else if(!servN) v='Now <b>Task 2</b>. Add an ecosystem service — the benefit the park gives people.';
-      else if(cats.length<4) v='Task 2 wants one example from <b>each</b> of the four categories. Still missing: <em>'+
-        missing.join(', ')+'</em>.';
-      else if(linkedN<servN) v='Every service needs a <b>➜ provides</b> arrow into a named outcome. '+
+      if(!nodes.length && !plantL.length)
+        v='Start anywhere. Drag a piece onto the canvas, or open <b>✎ Task 1</b> and list a plant you can source from nps.gov or usgs.gov.';
+      else if(plantL.length<3||animalL.length<3) v='Open <b>✎ Task 1</b>. The sheet wants <b>three or more</b> of each, and you have '+
+        plantL.length+' plant'+(plantL.length===1?'':'s')+' and '+animalL.length+' animal'+(animalL.length===1?'':'s')+'.';
+      else if(!fv(srcEl)) v='Record the nps.gov or usgs.gov pages your names came from in the band above the diagram.';
+      else if(filled2.length<4) v='Now <b>✎ Task 2</b>. One example from <b>each</b> of the four categories, still missing: <em>'+
+        missing2.join(', ')+'</em>.';
+      else if(rel2.length<filled2.length) v='Task 2’s third column is the sustainability relationship, or the feedback loop the service sits in. '+
+        (filled2.length-rel2.length)+' of your rows '+((filled2.length-rel2.length)===1?'is':'are')+' still blank.';
+      else if(!servN) v='The writing is done. Now build the picture: drag those four services onto the canvas and give each one a <b>➜ provides</b> arrow into an outcome.';
+      else if(linkedN<servN) v='Every service on the canvas wants a <b>➜ provides</b> arrow into a named outcome. '+
         (servN-linkedN)+' of yours '+((servN-linkedN)===1?'does':'do')+' not have one yet.';
       else if(!harms.length) v='Now <b>Task 3</b>. Drop in a human pressure and draw a <b>− harms</b> arrow to the service it damages.';
       else if(!fv(t3chal)||!linkedService()||!fv(t3human)||!fv(t3sol))
-        v='The diagram is there. Open <b>✎ Task 3 write-up</b> and finish the four-part paragraph.';
+        v='The diagram is there. Open <b>✎ Task 3</b> and finish the four-part paragraph.';
       else v='<b>All three tasks are covered.</b> Check the feedback loops, then Save as PDF and hand that in.';
       verdictEl.innerHTML=v;
 
       report={cnt:cnt, cross:cross, loops:loopsCache, checks:checks,
               t1:t1, t2:t2, t3:t3, cats:cats, verdict:v,
-              servN:servN, linkedN:linkedN, harms:harms};
+              servN:servN, linkedN:linkedN, harms:harms,
+              plantL:plantL, animalL:animalL, rows2:rows2};
     }
 
-    [srcEl,t3chal,t3human,t3sol,nameEl,whoEl].forEach(function(e){
+    [srcEl,t1plants,t1animals,t3chal,t3human,t3sol,nameEl,whoEl].forEach(function(e){
       if(e) e.addEventListener('input',analyse); });
+    SERVICE.forEach(function(c){
+      [t2ex[c],t2rel[c]].forEach(function(e){ if(e) e.addEventListener('input',analyse); }); });
     if(t3link) t3link.addEventListener('change',analyse);
 
     /* ── shock simulation ── */
@@ -1930,13 +2121,16 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
       ".pc-ai{margin-top:10px;font-size:8pt;line-height:1.45;color:#5b6b63;background:#f6f7f6;"+
         "border-left:3px solid #c2cec8;border-radius:0 5px 5px 0;padding:5px 8px}"+
       ".pc-ai b{color:#33453d}"+
-      ".pc-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}"+
+      ".pc-bio{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}"+
+      ".pc-bio h3{font-family:'Inter',sans-serif;font-size:8pt;font-weight:800;letter-spacing:.05em;"+
+        "text-transform:uppercase;color:#6b7d75;margin:0 0 3px}"+
+      ".pc-list li{margin-bottom:2px;font-size:9pt;color:#1A3C34}"+
+      ".pc-list li:before{content:'\\00b7';color:#9bb0a6;font-weight:900;margin-right:7px}"+
+      ".pc-list li.miss,.miss{color:#b08a8c;font-style:italic}"+
       "h2{font-family:'Merriweather',Georgia,serif;font-size:11pt;font-weight:800;color:#1A3C34;"+
         "margin:0 0 5px;padding-bottom:3px;border-bottom:1px solid #dde7e2}"+
       "h2:not(:first-child){margin-top:13px}"+
       "ul{list-style:none}li{font-size:9pt;line-height:1.5}"+
-      ".pc-checks li{margin-bottom:2px;font-size:9pt}"+
-      ".pc-checks li.ok{color:#1A3C34;font-weight:600}.pc-checks li.no{color:#96a49d}"+
       ".pc-expl{margin-top:15px;padding-top:9px;border-top:1px solid #dde7e2}"+
       ".pc-expl h2{border:0;padding:0;margin-bottom:4px}"+
       ".pc-expl p{font-size:9pt;line-height:1.5;margin-bottom:5.5px}"+
@@ -1983,11 +2177,10 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
       /* The sheet deliberately does NOT reprint the components, the connections,
          the food chain, the loop list or the on-screen read-out. All of that is
          already visible in the diagram directly above it, and spelling it out in
-         words made the page busy. Ryan's call, 2026-08-31. What prints is the
-         student's own work: the biome, the diagram, the two checklists, the
-         sustainability lens, the explanation and the AI credit. */
-      function checks(list){ return '<ul class="pc-checks">'+(list||[]).map(function(c){
-        return '<li class="'+(c.ok?'ok':'no')+'">'+(c.ok?'&#10003;':'&#9675;')+'&nbsp;&nbsp;'+pesc(c.t)+'</li>'; }).join('')+'</ul>'; }
+         words made the page busy. Ryan's call, 2026-08-31. The Task 1 to 3
+         checklists came off the sheet the same way on 2026-09-20: they are a
+         progress read-out for the student, not part of the submission. What
+         prints is the student's own work, one section per task. */
 
       /* Kept lean on purpose, the same way Module 1's sheet was trimmed: the
          diagram already shows the pieces, so nothing restates it. What IS printed
@@ -1996,22 +2189,40 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
       function paras(t){ return String(t).split(/\n\s*\n/).map(function(p){
         return '<p>'+pesc(p).replace(/\n/g,'<br>')+'</p>'; }).join(''); }
 
-      // sources (Task 1 — the sheet restricts these to nps.gov / usgs.gov)
+      // Task 1 — the two lists, plus the sources the sheet restricts to nps.gov / usgs.gov
       var src = fv(srcEl)
         ? '<div class="pc-src"><b>Sources</b> '+pesc(fv(srcEl))+'</div>' : '';
+      function bullets(list){ return '<ul class="pc-list">'+(list.length
+        ? list.map(function(t){ return '<li>'+pesc(t)+'</li>'; }).join('')
+        : '<li class="miss">none listed yet</li>')+'</ul>'; }
+      var bio = (report.plantL.length||report.animalL.length||fv(srcEl))
+        ? '<section class="pc-t1"><h2>Task 1 &middot; Biodiversity of the park</h2>'+
+            '<div class="pc-bio">'+
+              '<div><h3>Plant communities</h3>'+bullets(report.plantL)+'</div>'+
+              '<div><h3>Native animal species</h3>'+bullets(report.animalL)+'</div>'+
+            '</div>'+src+
+          '</section>'
+        : '';
 
-      // Task 2, in the sheet's own three columns
+      // Task 2, in the sheet's own three columns. The table the student typed is
+      // the source of truth; a row left blank falls back to the diagram, so work
+      // done only on the canvas still prints.
       var rowsHTML='';
-      SERVICE.forEach(function(cat){
-        var list=nodes.filter(function(n){ return n.dom===cat; });
+      report.rows2.forEach(function(r){
+        if(r.ex){
+          rowsHTML+='<tr><th>'+SERVNAME[r.c]+'</th><td>'+pesc(r.ex)+'</td><td>'+
+            (r.rel? pesc(r.rel) : '<span class="miss">not yet described</span>')+'</td></tr>';
+          return;
+        }
+        var list=nodes.filter(function(n){ return n.dom===r.c; });
         if(!list.length){
-          rowsHTML+='<tr><th>'+SERVNAME[cat]+'</th><td class="miss" colspan="2">no example yet</td></tr>';
+          rowsHTML+='<tr><th>'+SERVNAME[r.c]+'</th><td class="miss" colspan="2">no example yet</td></tr>';
           return;
         }
         list.forEach(function(n,k){
           var outs=servedBy(n).map(function(o){ return pesc(o.label); });
-          rowsHTML+='<tr><th>'+(k?'':SERVNAME[cat])+'</th><td>'+pesc(n.label)+'</td><td>'+
-            (outs.length? outs.join('; ') : '<span class="miss">not yet linked to an outcome</span>')+'</td></tr>';
+          rowsHTML+='<tr><th>'+(k?'':SERVNAME[r.c])+'</th><td>'+pesc(n.label)+'</td><td>'+
+            (outs.length? 'Leads to: '+outs.join('; ') : '<span class="miss">not yet described</span>')+'</td></tr>';
         });
       });
       var table='<section class="pc-t2"><h2>Task 2 &middot; Ecosystem services</h2>'+
@@ -2043,7 +2254,7 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
           '<h1>'+pesc(title)+'</h1>'+
           '<div class="pc-meta">'+(who?'<strong>'+pesc(who)+'</strong> &middot; ':'')+when+'</div>'+
         '</header>'+
-        src+
+        bio+
         '<figure class="pc-fig">'+diagramSVG()+
           '<figcaption><span class="k pl"></span>Plants <span class="k an"></span>Animals '+
           '<span class="k sv"></span>Services <span class="k pr"></span>Pressures '+
@@ -2053,12 +2264,7 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
           '</figcaption></figure>'+
         table+
         impact+
-        '<section class="pc-cols">'+
-          '<div><h2>Task 1 &middot; Biodiversity</h2>'+checks(report.t1)+
-            '<h2>Task 2 &middot; Services</h2>'+checks(report.t2)+'</div>'+
-          '<div><h2>Task 3 &middot; Impact analysis</h2>'+checks(report.t3)+'</div>'+
-        '</section>'+
-        '<footer class="pc-foot">Built in the Module 2 SET Builder &mdash; SOS 110, Module 2 Review. '+
+        '<footer class="pc-foot">Built in the Module 2 Systems Builder. SOS 110, Module 2 Review. '+
           'Every student submits their own copy on Canvas.</footer>'+
         '</body></html>';
 
@@ -2099,7 +2305,7 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
 <div class="menu" id="menu">
   <button class="menu-close" onclick="toggleMenu(false)" aria-label="Close menu">&times;</button>
   <h3>Module 2 Review &mdash; Jump to a slide</h3>
-  <div class="menu-grid"><button class="menu-item" data-go="0"><span class="menu-num">1</span>Title</button><button class="menu-item" data-go="1"><span class="menu-num">2</span>Announcements</button><button class="menu-item" data-go="2"><span class="menu-num">3</span>The Assignment</button><button class="menu-item" data-go="3"><span class="menu-num">4</span>What to Include</button><button class="menu-item" data-go="4"><span class="menu-num">5</span>Feedback Loop Example</button><button class="menu-item" data-go="5"><span class="menu-num">6</span>★ Module 2 SET Builder</button></div>
+  <div class="menu-grid"><button class="menu-item" data-go="0"><span class="menu-num">1</span>Title</button><button class="menu-item" data-go="1"><span class="menu-num">2</span>Announcements</button><button class="menu-item" data-go="2"><span class="menu-num">3</span>The Assignment</button><button class="menu-item" data-go="3"><span class="menu-num">4</span>What to Include</button><button class="menu-item" data-go="4"><span class="menu-num">5</span>Feedback Loop Example</button><button class="menu-item" data-go="5"><span class="menu-num">6</span>★ Module 2 Systems Builder</button></div>
 </div>
 
 <script>
@@ -2122,6 +2328,12 @@ function stageItems(s){ return Array.prototype.slice.call(s.querySelectorAll('.s
 function stageShown(s){ return stageItems(s).filter(function(e){ return e.classList.contains('shown'); }).length; }
 function setStage(s, n){ stageItems(s).forEach(function(e, i){ e.classList.toggle('shown', i < n); }); }
 
+function hydrate(i){
+  if(i < 0 || i >= slides.length) return;
+  slides[i].querySelectorAll('img[data-src]').forEach(function(im){
+    im.src = im.getAttribute('data-src'); im.removeAttribute('data-src');
+  });
+}
 function show(i, back){
   i = Math.max(0, Math.min(slides.length-1, i));
   slides[cur].classList.remove('active');
@@ -2130,6 +2342,10 @@ function show(i, back){
   s.classList.add('active');
   const f = s.querySelector('iframe[data-src]');
   if(f && !f.src){ f.src = f.getAttribute('data-src'); }
+  // photos arrive with their slide, plus the neighbours so paging stays instant.
+  // Every slide is stacked at inset:0, so loading="lazy" alone would still fetch
+  // the whole deck's images on load — 23 MB on a phone, for one slide.
+  hydrate(cur); hydrate(cur+1); hydrate(cur-1);
   // arriving forward starts a staged slide covered; stepping back into one
   // shows everything, so you don't have to click through it again
   const st = stageItems(s);
