@@ -318,6 +318,13 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
   line-height:1.42; color:#2f3f38;}
 .ag-meta dd b{font-weight:700; color:var(--forest);}
 /* on its own line so a long URL never breaks mid-token */
+/* the one link on this slide: a pointer back to Chapter 5's definition, opened
+   in its own tab so the deck on screen keeps its place */
+.ag-link{font-weight:800; font-size:1.09em; color:var(--accent); text-decoration:none;
+  border-bottom:2px solid color-mix(in srgb, var(--accent) 38%, transparent);
+  padding-bottom:.02em; transition:border-color .15s ease, background .15s ease;}
+.ag-link:hover,.ag-link:focus-visible{border-bottom-color:var(--accent);
+  background:color-mix(in srgb, var(--accent) 9%, transparent);}
 .ag-url{display:block; margin-top:.06rem; font-family:'Inter',sans-serif; font-weight:700;
   font-size:.96em; color:var(--forest-mid); word-break:normal; white-space:nowrap;}
 
@@ -829,7 +836,10 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
         <span class="ag-url">ryanpcornell.github.io/sos110-module-2-review/#slide-6</span></dd></div>
     </div>
 
-    <p class="ag-obj"><b>Objective.</b> Collaboratively analyze the ecosystem services of Grand
+    <p class="ag-obj"><b>Objective.</b> Collaboratively analyze the <a class="ag-link"
+      href="https://ryanpcornell.github.io/sos110-chapter-5/#slide-11" target="_blank"
+      rel="noopener noreferrer" title="Opens Chapter 5, slide 11: Types of Ecosystem Services"
+      >ecosystem services</a> of Grand
       Canyon National Park (GCNP) and evaluate how human-driven changes impact its long-term
       sustainability. <i>Final deliverable:</i> a single digital mind map (via Zoom Whiteboard,
       Miro, Canva, the Module 2 Systems Builder, or a similar tool) containing three distinct,
